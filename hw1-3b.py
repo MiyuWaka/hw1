@@ -1,5 +1,7 @@
-#Make a program that can find single word anagrams that use all the characters in a given string (e.g. “omnsotare” -> “astronomer”)
-#与えられた文字が全て入っている単語を作るプログラムを作ってみてください。
+#Adapt that program to find anagrams that use only a subset of characters
+#上のプログラムを与えられた文字の一部しか入っていない文字の単語も作れるプログラムに変更してみてください。
+#Feel free to experiment in ways to do that faster!
+#より速い工夫もぜひ試してみてください。
 
 list_1 = input().rstrip().split()
 
@@ -20,6 +22,6 @@ for i in lines:
         v_list.sort()
         for j in v_list:
                 y += j
-        if x == y:
+        if y in x:
                 print(i)
         y = ""
