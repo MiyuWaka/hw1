@@ -33,6 +33,8 @@ for i in lines:
         y = ""
 
 #print(dictionary)
+score = 0
+score_d = []
 
 
 for i in newlist:
@@ -40,5 +42,18 @@ for i in newlist:
         #print(x)
         for j in dictionary:
                 if x == dictionary[j]:
-                        print(j)
-        
+                        for m in i:
+                                if m == "j" or "k" or "q" or "x" or "z":
+                                        score = score + 3
+                                elif m == "c" or "f" or "h" or "l" or "m" or "p" or "v" or "w" or "y":
+                                        score = score + 2
+                                else:
+                                        score = score + 1 
+                        score_d.append([j,(score + 1) * (score + 1)])
+                        score = 0
+
+
+score_d.sort(key=lambda x:-x[1])
+
+for i in score_d:
+        print(i[0])    
